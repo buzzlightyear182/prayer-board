@@ -1,6 +1,24 @@
-<div>
-  <%= prayer.body %> by <%= prayer.user.username %>
-  <% if prayer.answered == false %>
-    <%= button_to "Answered", prayer_path(prayer.id), method: :put %>
-  <% end %>
+<div class="list-group">
+    <div class="list-group-item">
+        <div class="row-action-primary">
+        <% if prayer.answered == false %>
+            <i class="mdi-action-launch"></i>
+        <% else %>
+            <i class="mdi-action-done"></i>
+        <% end %>
+        </div>
+        <div class="row-content">
+            <div class="least-content">
+              <%= time_ago_in_words(prayer.updated_at) %>
+            </div>
+            <h4 class="list-group-item-heading"><%= prayer.title %></h4>
+            <p class="list-group-item-text">
+                <p><%= prayer.body %></p>
+                <p class='small'>Written by <%= prayer.user.username %></p>
+            <% if prayer.answered == false %>
+                <%= button_to "Answered", prayer_path(prayer.id), method: :put, :class => "btn btn-primary" %></p>
+            <% end %>
+        </div>
+    </div>
+    <div class="list-group-separator"></div>
 </div>

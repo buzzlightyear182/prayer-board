@@ -26,6 +26,6 @@ class PrayersController < ApplicationController
   private
 
   def prayer_params
-    params.require(:prayer).permit(:body)
+    params.require(:prayer).permit(:title, :body)
   end
 end
