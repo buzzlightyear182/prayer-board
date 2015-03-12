@@ -8,4 +8,8 @@ class Dashboard
     Prayer.new
   end
 
+  def prayers status
+    @user.prayers.where(answered: status)
+  end
+
 end

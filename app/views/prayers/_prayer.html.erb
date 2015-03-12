@@ -1,0 +1,6 @@
+<div>
+  <%= prayer.body %> by <%= prayer.user.username %>
+  <% if prayer.answered == false %>
+    <%= button_to "Answered", prayer_path(prayer.id), method: :put %>
+  <% end %>
+</div>

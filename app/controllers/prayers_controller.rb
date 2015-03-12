@@ -10,20 +10,22 @@ class PrayersController < ApplicationController
   end
 
   def create
-    prayer = Prayer.create(prayer_params)
+    prayer = current_user.prayers.create(prayer_params)
     unless prayer.save
       flash[:error] = "Sorry, cannot post your prayer request"
     end
     redirect_to dashboard_path
   end
 
-  private
-
-  def build_content
-    Prayer.new prayer_params
+  def update
+    prayer = Prayer.find(params[:id])
+    prayer.update_attributes!(answered: true)
+    redirect_to dashboard_path
   end
 
+  private
+
   def prayer_params
-    params.require(:prayer).permit(:body, :user_id)
+    params.require(:prayer).permit(:body)
   end
 end

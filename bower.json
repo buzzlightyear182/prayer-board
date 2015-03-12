@@ -1,0 +1,21 @@
+{
+  "name": "Prayer Request Board",
+  "version": "0.0.1",
+  "authors": [
+    "buzzlightyear182 <jane.buzzlightyear@gmail.com>"
+  ],
+  "description": "People can post their prayer requests",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "~0.2.2",
+    "bootstrap": "~3.3.2"
+  }
+}
