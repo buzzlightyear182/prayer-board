@@ -1,6 +1,6 @@
 class PrayersController < ApplicationController
 
-  # before_action :authorize
+  before_action :authenticate_user!
 
   def show
     @prayer = Prayer.find(params[:id])
