@@ -1,4 +1,5 @@
-== PRAYER BOARD
+Prayer Board
+--------------
 
 Speed building on Ruby on Rails using Bootstrap and Material Design
 
